@@ -1,0 +1,64 @@
+ package com.mercury.demo.pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.By.ByCssSelector;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
+import com.mercury.demo.Base;
+
+public class login extends Base {
+
+	public WebDriver driver;
+	
+public login(WebDriver driver)
+{
+	this.driver= driver;
+
+}
+public By username =By.name("userName");
+public WebElement getusername() {
+	return driver.findElement(username);
+}
+
+public By password =By.name("password");
+public WebElement getpassword() {
+	return driver.findElement(password);
+}
+
+public By login =By.name("login");
+public WebElement getlogin() {
+	return driver.findElement(login);
+}
+
+public By roundTrip=By.cssSelector("tr:nth-child(2) td:nth-child(2) b:nth-child(1) font:nth-child(1) > input:nth-child(1)");
+public WebElement getroundTrip() {
+	return driver.findElement(roundTrip);
+}
+public By oneTrip=By.cssSelector("tr:nth-child(2) td:nth-child(2) b:nth-child(1) font:nth-child(1) > input:nth-child(2)");
+public WebElement getoneTrip() {
+	return driver.findElement(oneTrip);
+}
+public By passenger= By.cssSelector("tbody:nth-child(1) tr:nth-child(3) td:nth-child(2) b:nth-child(1) > select:nth-child(1)");
+public WebElement getpassenger() {
+	Select oselect=new Select(getpassenger());
+	oselect.selectByValue("1");
+	oselect.selectByValue("2");
+	oselect.selectByValue("3");
+	oselect.selectByValue("4");
+	return driver.findElement(passenger);
+	
+}
+
+ 
+
+Select oselect=new Select(getpassenger());
+
+
+
+
+
+
+
+}

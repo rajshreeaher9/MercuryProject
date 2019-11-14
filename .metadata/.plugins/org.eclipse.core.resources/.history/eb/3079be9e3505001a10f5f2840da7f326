@@ -1,0 +1,28 @@
+package com.mercury.demo.business;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import com.mercury.demo.pages.login;
+
+public class execute extends login  {
+
+	public execute(WebDriver driver) {
+		super(driver);
+		// TODO Auto-generated constructor stub
+	}
+	public void loginFillUp(String username,String password) {
+		 //getusername().clear();
+		 getusername().sendKeys("mercury");
+		 //getpassword().clear();
+		 getpassword().sendKeys("mercury");
+		 getlogin().click();
+	}
+	/*public void nextPage(WebElement roundTrip,WebElement oneTrip,WebElement passenger)
+	{
+	getroundTrip();
+	getoneTrip();
+	getpassenger();
+
+}*/
+}

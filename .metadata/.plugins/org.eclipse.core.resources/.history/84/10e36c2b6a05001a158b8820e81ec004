@@ -1,0 +1,33 @@
+package com.mercury.demo.pages;
+
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+import com.mercury.demo.business.execute;
+import com.mercury.demo.regression.RunTest;
+import com.mercury.demo.regression.TestUtil;
+
+public class ParallelRun {
+	
+	
+	@Test
+	public void test1() {
+		RunTest run= new RunTest();
+		
+	run.beforeLogin();
+	run.getLoginData();
+	run.pageLogin("oneway", "4", fromPort, fromMonth, fromDay, toPort, toMonth, toDay, servClass, airline, totalPrc, fname, lname, fname1, lname1, fname2, lname2, fname3, lname3);
+	run.afterTest();	
+	System.out.println("first");
+		
+	}
+	@Test
+	public void test2() {
+		RunTest run= new RunTest();
+		System.out.println("Second");
+		
+	}
+	
+	
+
+}

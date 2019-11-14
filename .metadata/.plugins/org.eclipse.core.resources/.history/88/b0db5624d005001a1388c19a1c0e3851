@@ -1,0 +1,60 @@
+package com.mercury.demo.pages;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+import com.mercury.demo.business.execute;
+import com.mercury.demo.regression.RunTest;
+import com.mercury.demo.regression.TestUtil;
+
+public class ParallelRun {
+	WebDriver driver;
+	
+	@Test
+	public void test1() throws InterruptedException {
+		RunTest run= new RunTest();
+		
+		
+	run.beforeLogin();
+	execute exe= PageFactory.initElements(driver, execute.class);
+	
+	String url= "http://newtours.demoaut.com/mercurysignon.php";
+	driver.get(url);
+	driver.manage().window().maximize();
+	
+	run.pageLogin("oneway", "4", "Paris", "February", "3", "Sydney", "February", "6", "Business","Pangea Airlines","2338", "Rajshree", "Aher", "ABC", "DEF", "EFG", "HIJ", "KLM", "NMP");
+	run.afterTest();
+		
+		
+		
+	System.out.println("Total Price is correct");
+		
+	}
+	@Test
+	public void test2() throws InterruptedException {
+		/*RunTest run= new RunTest();
+		
+		login log= new login(driver);
+		
+	run.beforeLogin();
+	run.pageLogin("roundtrip", "4", "Sydney", "March", "2", "Paris", "March", "8", "Coach","Pangea Airlines",2330, "Rajshree", "Aher", "ABC", "DEF", "EFG", "HIJ", "KLM", "NMP");
+	run.afterTest();*/	
+		RunTest run= new RunTest();
+		run.beforeLogin();
+		
+		
+		String url= "http://newtours.demoaut.com/mercurysignon.php";
+		driver.get(url);
+		driver.manage().window().maximize();
+		
+		System.out.println("Total Price is incorrect");
+		
+	}
+	
+	
+
+}
